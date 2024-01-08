@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyCoffeePreparationApp.Coffees.Ingredients
 {
-    internal class Cinnamon
+    public class Cinnamon : Spice
     {
+        public override int Id => 6;
+        public override string Name => "Cinnamon";
     }
 }

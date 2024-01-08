@@ -8,6 +8,6 @@ namespace MyCoffeePreparationApp.Coffees.Ingredients
 {
     public abstract class CoffeeBean : Ingredient
     {
-        public override string Instructions => $"Grind. {base.Instructions}";
+        public override string Instructions => $"Grind 8 grams. {base.Instructions}";
     }
 }

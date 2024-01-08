@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyCoffeePreparationApp.FileAccess
 {
-    internal class FileFormatExtensions
+    public static class FileFormatExtensions
     {
+        public static string AsFileExtension(this FileFormat fileFormat) =>
+            fileFormat == FileFormat.Json ? "json" : "xml";
     }
 }

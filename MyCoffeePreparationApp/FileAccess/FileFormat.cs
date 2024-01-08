@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyCoffeePreparationApp.FileAccess
 {
-    internal class FileFormat
+    public enum FileFormat
     {
+        Json,
+        Xml
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyCoffeePreparationApp.Coffees.Ingredients
 {
-    internal interface IIngredientsRegister
+    public interface IIngredientsRegister
     {
+        IEnumerable<Ingredient> All { get; }
+        Ingredient GetById(int id);
     }
 }

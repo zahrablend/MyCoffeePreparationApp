@@ -2,6 +2,7 @@
 using MyCoffeePreparationApp.DataAccess;
 using MyCoffeePreparationApp.Coffees.Ingredients;
 using MyCoffeePreparationApp.Coffees;
+using MyCoffeePreparationApp.App;
 
 const FileFormat Format = FileFormat.Json;
 
@@ -13,11 +14,11 @@ const string FileName = "recipes";
 var fileMetadata = new FileMetadata (FileName, Format);
 
 var ingredientsRegister = new IngredientsRegister();
-var coffeePreparationApp = new MyCoffeePreparationApp(
+var coffeePreparationApp = new CoffeePreparationApp(
     new RecipesRepository(
         new StringsJsonRepository(),
         ingredientsRegister),
     new RecipesConsoleUserInteraction(
         ingredientsRegister));
 
-coffeePreparationApp.run(fileMetadata.ToPath());
+coffeePreparationApp.Run(fileMetadata.ToPath());
