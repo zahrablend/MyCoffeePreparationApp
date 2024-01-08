@@ -1,5 +1,7 @@
 ﻿using MyCoffeePreparationApp.FileAccess;
 using MyCoffeePreparationApp.DataAccess;
+using MyCoffeePreparationApp.Coffees.Ingredients;
+using MyCoffeePreparationApp.Coffees;
 
 const FileFormat Format = FileFormat.Json;
 
