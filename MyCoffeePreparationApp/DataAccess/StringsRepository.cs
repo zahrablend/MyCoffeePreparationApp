@@ -1,6 +1,6 @@
 ﻿namespace MyCoffeePreparationApp.DataAccess
 {
-    public abstract class StringsRepository : IStringRepository
+    public abstract class StringsRepository : IStringsRepository
     {
         public List<string> Read(string filePath)
         {

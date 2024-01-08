@@ -1,12 +1,11 @@
-﻿using MyCoffeePreparationApp.DataAccess;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace MyCoffeePreparationApp.FileAccess
+namespace MyCoffeePreparationApp.DataAccess
 {
     public class StringsXmlRepository : StringsRepository
     {

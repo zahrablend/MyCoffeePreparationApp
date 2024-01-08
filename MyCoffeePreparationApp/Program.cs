@@ -1,7 +1,21 @@
-﻿/*
- Use StringsXmlRepository class to read and write in xml formal
- var repo = new StringsXmlRepository();
- var strings = new List<string> { "foo", "bar", "baz" };
- repo.Write("strings.xml", strings);
- var readStrings = repo.Read("strings.xml");
- */
+﻿using MyCoffeePreparationApp.FileAccess;
+using MyCoffeePreparationApp.DataAccess;
+
+const FileFormat Format = FileFormat.Json;
+
+IStringsRepository stringsRepository = Format == FileFormat.Json ? 
+    new StringsJsonRepository() : 
+    new StringsXmlRepository();
+
+const string FileName = "recipes";
+var fileMetadata = new FileMetadata (FileName, Format);
+
+var ingredientsRegister = new IngredientsRegister();
+var coffeePreparationApp = new MyCoffeePreparationApp(
+    new RecipesRepository(
+        new StringsJsonRepository(),
+        ingredientsRegister),
+    new RecipesConsoleUserInteraction(
+        ingredientsRegister));
+
+coffeePreparationApp.run(fileMetadata.ToPath());
