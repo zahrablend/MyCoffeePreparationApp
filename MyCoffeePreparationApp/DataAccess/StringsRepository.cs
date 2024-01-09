@@ -4,8 +4,13 @@
     {
         public List<string> Read(string filePath)
         {
-            var fileContents = File.ReadAllText(filePath);
-            return TextToStrings(fileContents);
+            if (File.Exists(filePath))
+            {
+                var fileContents = File.ReadAllText(filePath);
+                return TextToStrings(fileContents);
+            }
+
+            return new List<string>();
         }
 
         protected abstract List<string> TextToStrings(string fileContents);

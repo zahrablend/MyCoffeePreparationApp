@@ -56,12 +56,12 @@ namespace MyCoffeePreparationApp.Coffees
             var recipesAsStrings = new List<string>();
             foreach (var recipe in allRecipes)
             {
-                var allIds = new List<string>();
+                var allIds = new List<int>();
                 foreach (var ingredient in recipe.Ingredients)
                 {
                     allIds.Add(ingredient.Id);
                 }
-                recipesAsStrings.Add(string.Join(Separator, allIds));
+                recipesAsStrings.Add(string.Join(Separator, allIds)); 
             }
             _stringsRepository.Write(filePath, recipesAsStrings);
         }
